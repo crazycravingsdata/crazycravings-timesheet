@@ -338,7 +338,7 @@ function syncAmPm(timeId, ampmId){
 }
 
 const diffMin  = (i,o) => { const[ih,im]=i.split(':').map(Number),[oh,om]=o.split(':').map(Number); return(oh*60+om)-(ih*60+im); };
-const fmtDur   = min => { const h=Math.floor(min/60),m=min%60; return h===0?`${m}min`:m===0?`${h}h`:`${h}h ${m}min`; };
+const fmtDur   = min => (min/60).toFixed(2)+'h';
 const fmtMoney = v => '$'+v.toFixed(2);
 const calcVal  = (min,rate) => (min/60)*rate;
 
